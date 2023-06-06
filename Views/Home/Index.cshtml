@@ -1,0 +1,38 @@
+﻿@model IEnumerable<UploadViewModel>
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    <div class="text-center">
+        
+            <h1 class="mt-5">Search File</h1>
+
+        <br />
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8">
+                    <form asp-controller="Upload" asp-action="SearchResult" method="post">
+                        <div class="input-group input-group-lg mb-3">
+                            <input type="text" class="form-control" name="term" placeholder="File Name" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-primary btn-lg" type="submit" id="button-addon2">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<h3 class="text-center mt-2">The Most Recent Uploaded</h3>
+<hr />
+<br />
+
+<div>
+    @await Component.InvokeAsync("UploadsList", new { Uploads = Model })
+</div>

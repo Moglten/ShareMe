@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "twitter-bootstrap@5.2.0",
+      "destination": "wwwroot/lib/twitter-bootstrap/"
+    },
+    {
+      "library": "lazy.js@0.5.1",
+      "destination": "wwwroot/lib/lazy.js/"
+    }
+  ,
+{
+  "library": "lazyload@2.0.3",
+  "destination": "wwwroot/lib/lazyload/"
+}
+,
+{
+  "provider": "jsdelivr",
+  "library": "lazyload@2.0.0-rc.2",
+  "destination": "wwwroot/lib/lazyload/"
+}
+]
+}

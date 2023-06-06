@@ -1,0 +1,14 @@
+﻿@model IEnumerable<UploadViewModel>
+
+
+@{
+    ViewData["Title"] = "Browse";
+}
+<br />
+<h1>Browse</h1>
+<hr />
+<br />
+
+<div>
+    @await Component.InvokeAsync("UploadsList", new { Uploads = Model })
+</div>

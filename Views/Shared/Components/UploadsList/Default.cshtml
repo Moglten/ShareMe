@@ -1,0 +1,54 @@
+﻿@model IEnumerable<UploadViewModel>
+
+
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="card mb-3 col-md-12">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            @if (item.FileType.StartsWith("image"))
+                            {
+                                <img width="100%" height="100%" class="card-img lazyload" alt="..." src="/uploads/@item.FileName">
+                            }
+
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <h5 class="card-title">@item.OriginalFileName</h5>
+                                    </div>
+                                    <div class="col-3">
+                                        @{
+                                            var size = item.Size / 1024;
+                                            if (size < 1024)
+                                            {
+                                                <span>Size: @(Math.Floor((decimal)size)) Kb</span>
+                                            }
+                                            else
+                                            {
+                                                <span>Size: @(Math.Floor((decimal)size/1024)) Mb</span>
+                                            }
+
+                                        }
+                                    </div>
+                                    <div class="col-4">
+                                        Download Count : @item.DownloadCount
+                                    </div>
+
+                                    <p class="card-text"><small class="text-muted ml-3">@item.UploadDate</small></p>
+
+                                    <div class="download-margin">
+                                        <a herf="#" asp-action="Download" asp-controller="Upload" asp-route-fileName="@item.FileName" class="btn btn-outline-primary">Download</a>
+                                    </div>
+
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>  

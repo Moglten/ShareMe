@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Sharing</title>
+
+
+  
+    <link href="~/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/assests.min.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" type="image/icon" href="~/assets/images/favicon.ico" />
+
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <!-- Skills Circle CSS  -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/circlebars@1.0.3/dist/circle.css">
+    <!-- Fonts -->
+    <!-- Google Fonts Raleway -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,500i,600,700" rel="stylesheet">
+    <!-- Google Fonts Open sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet">
+
+</head>
+<body>
+    <header id="mu-hero">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light mu-navbar">
+                <!-- Text based logo -->
+                <a class="navbar-brand mu-logo" style="font-size: 30px; width: 25%; margin-left: 50px" asp-action="Index" asp-controller="Home">
+                    <span style="color:white">
+                        File Sharing
+                    </span>
+                </a>
+
+                <!-- <a class="navbar-brand mu-logo" href="index.html"><img src="assets/images/logo.png" alt="logo"></a> -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-decoration:none">
+                    <ul class="navbar-nav align-right mu-navbar-nav">
+                        <li class="nav-item @(Context.Request.Path.Value.ToLower() == "/home/index"? "active" : "")">
+                            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item @(Context.Request.Path.Value.ToLower() == "/upload/browse"? "active" : "")">
+                            <a asp-area="" asp-controller="Upload" asp-action="Browse">Browse</a>
+                        </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item @(Context.Request.Path.Value.ToLower() == "/upload/index"? "active" : "")">
+                                <a asp-area="" asp-controller="Upload" asp-action="Index">Uploads</a>
+                            </li>
+                        }
+
+                        <li class="nav-item @(Context.Request.Path.Value.ToLower() == "/home/contact"? "active" : "")">
+                            <a asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a>
+                        </li>
+
+                        <li class="nav-item @(Context.Request.Path.Value.ToLower() == "/home/about"? "active" : "")">
+                            <a asp-area="" asp-controller="Home" asp-action="about">About Us</a>
+                        </li>
+                    </ul>
+                    <div style="align-content:end">
+                        <ul class="navbar-nav mr-auto mu-navbar-nav">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                            
+                                <li class="nav-item @(Context.Request.Path.Value.ToLower() == "/Account/Info"? "active" : "")">
+                                
+                                    <a asp-area="" asp-controller="Account" asp-action="Info">@User.FindFirstValue(ClaimTypes.GivenName)</a>
+                                </li>
+                                <li class="nav-item @(Context.Request.Path.Value.ToLower() == "/Account/"? "active" : "")">
+                                    <a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item float-end @(Context.Request.Path.Value.ToLower() == "/Account/login"? "active" : "")">
+                                    <a asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                                </li>
+                                <li class="nav-item float-end @(Context.Request.Path.Value.ToLower() == "/Account/Register"? "active" : "")">
+                                    <a asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                                </li>
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container ">
+        <main role="main" class="pb-3 main-content">
+            <div class="main-content">
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+
+
+    <!-- Start footer -->
+    <footer id="mu-footer">
+        <div class="mu-footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="mu-single-footer">
+                            <h2 class="mu-footer-logo">File Sharing</h2>
+                            <p>Our product provide users of free space to save its important file photo.</p>
+                            <div class="mu-social-media">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a class="mu-twitter" href="#"><i class="fa fa-twitter"></i></a>
+                                <a class="mu-pinterest" href="#"><i class="fa fa-pinterest-p"></i></a>
+                                <a class="mu-google-plus" href="#"><i class="fa fa-google-plus"></i></a>
+                                <a class="mu-youtube" href="#"><i class="fa fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mu-single-footer">
+                            <h3>Useful link</h3>
+                            <ul class="mu-useful-links">
+                                <li><a href="/Home/About">About Us</a></li>
+                                <li><a href="/Home/Contact">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mu-single-footer">
+                            <h3>Contact Information</h3>
+                            <ul class="list-unstyled">
+                                <li class="media">
+                                    <span class="fa fa-home"></span>
+                                    <div class="media-body">
+                                        <p>349 Main St, Deseronto, Canada</p>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <span class="fa fa-phone"></span>
+                                    <div class="media-body">
+                                        <p>+00 123 456 789 00</p>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <span class="fa fa-envelope"></span>
+                                    <div class="media-body">
+                                        <p>filesharing@gmail.com</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mu-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mu-footer-bottom-area">
+                            <p class="mu-copy-right">&copy; Copyright 2022 - File Sharing. All right reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End footer -->
+    <!-- JavaScript -->
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <!-- Progress Bar -->
+    <script src="https://unpkg.com/circlebars@1.0.3/dist/circle.js"></script>
+
+    <script src="~/js/assets.min.js"></script>
+    <!-- About us Skills Circle progress  -->
+    <script>
+        // First circle
+        new Circlebar({
+            element: "#circle-1",
+            type: "progress",
+            maxValue: "90"
+        });
+
+        // Second circle
+        new Circlebar({
+            element: "#circle-2",
+            type: "progress",
+            maxValue: "84"
+        });
+
+        // Third circle
+        new Circlebar({
+            element: "#circle-3",
+            type: "progress",
+            maxValue: "60"
+        });
+
+        // Fourth circle
+        new Circlebar({
+            element: "#circle-4",
+            type: "progress",
+            maxValue: "74"
+        });
+
+    </script>
+   
+</body>
+</html>

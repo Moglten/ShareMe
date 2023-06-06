@@ -1,0 +1,103 @@
+﻿@model File_Sharing.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+<br />
+
+
+<section id="mu-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-contact-area">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mu-title">
+                                <h2>Register</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mu-contact-content">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="mu-contact-form-area">
+                                    <div id="form-messages"></div>
+                                    <form method="post" class="mu-contact-form" asp-action="Register" asp-route-ReturnUrl="@Context.Request.Query["ReturnUrl"]">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                                        <div class="form-group">
+                                            <span class="fa fa-user mu-contact-icon"></span>
+                                            <input asp-for="ShortName" class="form-control" placeholder="UserName" id="ShortName" required>
+                                            <span asp-validation-for="ShortName" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <span class="fa fa-envelope mu-contact-icon"></span>
+                                            <input type="email" asp-for="Email" class="form-control" placeholder="Email" id="Email" required>
+                                            <span asp-validation-for="Email" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="form-group input-group" id="show_hide_password">
+
+                                            <input type="password" asp-for="Password" class="form-control" placeholder="Password" id="Password" required>
+                                            <div class="input-group-addon">
+                                                    <button><i class="fa fa-eye-slash" aria-hidden="true"></i></button>
+                                            </div>
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <span class="fa fa-phone-square mu-contact-icon"></span>
+                                            <input type="tel" asp-for="PhoneNumber" class="form-control" placeholder="PhoneNumber" id="PhoneNumber" required>
+                                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                        </div>
+
+                                    
+
+                                        <button type="submit" class="mu-send-msg-btn"><span>Register</span></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- End Contact section 
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register">
+            
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" type="password" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+-->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
