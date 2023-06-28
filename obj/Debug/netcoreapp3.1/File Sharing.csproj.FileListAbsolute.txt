@@ -354,3 +354,4 @@ C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\File Sharing.dl
 C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\File Sharing.pdb
 C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\File Sharing.genruntimeconfig.cache
 C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\Razor\Views\Account\ConfirmEmail.cshtml.g.cs

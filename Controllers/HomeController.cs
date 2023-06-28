@@ -69,7 +69,7 @@ namespace File_Sharing.Controllers
                 await _db.SaveChangesAsync();
                 TempData["Message"] = "Message has been sent successfully";
 
-                _emailService.SendEmail(model);
+                _emailService.SendContactEmail(model);
 
                 return RedirectToAction("Contact");
 

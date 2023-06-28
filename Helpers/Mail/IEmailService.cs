@@ -8,6 +8,9 @@ namespace File_Sharing.Helpers.Mail
 {
     public interface IEmailService
     {
-        void SendEmail(ContactViewModel contactVM);
+   
+
+        void SendConfirmationEmail(EmailServiceModel contactVM);
+        void SendContactEmail(ContactViewModel model);
     }
 }

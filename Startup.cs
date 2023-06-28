@@ -40,7 +40,8 @@ namespace File_Sharing
             });
 
             services.AddIdentity<AppUserExtender, IdentityRole>()
-                    .AddEntityFrameworkStores<ApplicationDbContext>();
+                    .AddEntityFrameworkStores<ApplicationDbContext>()
+                    .AddDefaultTokenProviders();
 
             
         }

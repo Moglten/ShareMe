@@ -10,7 +10,14 @@ namespace File_Sharing.Helpers.Mail
 {
     public class EmailService : IEmailService
     {
-        public void SendEmail(ContactViewModel contactVM)
+        public void SendConfirmationEmail(EmailServiceModel EmailSM)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+        public void SendContactEmail(ContactViewModel contactVM)
         {
             using(SmtpClient client = new SmtpClient("smtp.gmail.com",25))
             {

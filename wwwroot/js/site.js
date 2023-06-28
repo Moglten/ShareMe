@@ -1,4 +1,12 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+function togglePasswordEye() {
+    var password = document.getElementById('myInput');
+    
+    if(password.getAttribute('type') === 'password'){
+        password.setAttribute('type', 'text');
+        document.getElementById('font').style.color = 'blue';
+    }
+    else{
+        password.setAttribute('type', 'password');
+        document.getElementById('font').style.color = 'black';
+    }
+}
