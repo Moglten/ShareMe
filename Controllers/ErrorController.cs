@@ -1,11 +1,8 @@
 
-
 using Microsoft.AspNetCore.Mvc;
 
 namespace File_Sharing.Controllers
 {
-
-
     public class ErrorController : Controller
     {
         [Route("Error/{StatusCode}")]

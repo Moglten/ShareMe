@@ -36,7 +36,7 @@ namespace File_Sharing.Data
 
             return true;
         }
-
+        
         public IQueryable<UploadViewModel> Search(string searchTerm)
         {
             return _db.Uploads.Where(u => u.OriginalFileName.Contains(searchTerm))
@@ -86,11 +86,17 @@ namespace File_Sharing.Data
             return _mapper.Map<UploadViewModel>(selectedUpload);
         }
 
-        public async Task<bool> UpdateAsync(UploadViewModel UploadModel)
+        public async Task<Uploads> FindDBAsync(string Id)
+        {
+            var selectedUpload = await _db.Uploads.FindAsync(Id);
+
+            return selectedUpload;
+        }
+
+        public async Task<bool> UpdateAsync(Uploads UploadModel)
         {
             if(UploadModel == null)
                 return false;
-                
             _db.Update(UploadModel);
 
             await _db.SaveChangesAsync();

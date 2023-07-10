@@ -8,7 +8,6 @@ using File_Sharing.Data.DBModels;
 using File_Sharing.Services.EmailService.Mail;
 using File_Sharing.ViewModels;
 
-
 namespace File_Sharing.Services.MappingProfiles
 {
     public class EmailProfile : Profile

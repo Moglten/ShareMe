@@ -39,20 +39,21 @@ namespace File_Sharing.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await signInManager.PasswordSignInAsync(LoginVM.Email, LoginVM.Password, true, false);
+                var result = await signInManager.PasswordSignInAsync(
+                                                LoginVM.Email, LoginVM.Password, true, false);
                 if (result.Succeeded)
                 {
                     // Get the ShortName or the Username of logged in user and add it to the ClaimsPrincipal
-                    var user = await userManager.FindByEmailAsync(LoginVM.Email);
-                    userManager.AddClaimAsync(user, new Claim(ClaimTypes.GivenName, user.ShortName)).Wait();
-
-                    // End of the code for adding the ShortName to the ClaimsPrincipal
+                    var targetedUser = await userManager.FindByEmailAsync(LoginVM.Email);
+                    userManager.AddClaimAsync(targetedUser, new Claim(ClaimTypes.GivenName, targetedUser.ShortName)).Wait();
 
                     if (!string.IsNullOrEmpty(ReturnUrl))
                     {
                         return LocalRedirect(ReturnUrl);
                     }
                     return RedirectToAction("Create", "Upload");
+                }else{
+                    ModelState.AddModelError("", "Maybe the Email or the Password is incorrect");
                 }
             }
             return View(LoginVM);
@@ -113,7 +114,6 @@ namespace File_Sharing.Controllers
             return View();
         }
 
-
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> ConfirmEmail([FromQuery]string userId,[FromQuery] string token)
@@ -133,9 +133,9 @@ namespace File_Sharing.Controllers
 
             if (result.Succeeded)
             {
-                // Get the ShortName or the Username of logged in user and add it to the ClaimsPrincipal
-                var targetedUser = await userManager.FindByEmailAsync(currentUser.Email);
-                userManager.AddClaimAsync(targetedUser, new Claim(ClaimTypes.GivenName, currentUser.ShortName)).Wait();
+                    // Get the ShortName or the Username of logged in user and add it to the ClaimsPrincipal
+                    var targetedUser = await userManager.FindByEmailAsync(currentUser.Email);
+                    userManager.AddClaimAsync(targetedUser, new Claim(ClaimTypes.GivenName, currentUser.ShortName)).Wait();
 
                 await signInManager.SignInAsync(currentUser, false);
                 return RedirectToAction("Create", "Upload");
