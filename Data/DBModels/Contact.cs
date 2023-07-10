@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
+using claim = System.Security.Claims;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -13,6 +14,7 @@ namespace File_Sharing.Data.DBModels
         public Contact()
         {
             Id = Guid.NewGuid().ToString();
+            
         }
 
         public string Id { get; set; }

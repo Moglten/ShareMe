@@ -23,18 +23,19 @@ namespace File_Sharing
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddLocalization();
+            services.AddHttpContextAccessor();
 
             services.AddScoped<IEmailService, SendContactEmail>();
             services.AddScoped<IEmailService, SendConfirmationEmail>();
-            
             services.AddTransient<IUploadServices, UploadServices>();
 
             services.AddControllersWithViews();
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
 
-            services.AddIdentity<AppUserExtender, IdentityRole>()
+            services.AddIdentity
+                    <AppUserExtender, IdentityRole>(
+                        opt => opt.SignIn.RequireConfirmedEmail = true)
                     .AddEntityFrameworkStores<ApplicationDbContext>()
                     .AddDefaultTokenProviders();
 

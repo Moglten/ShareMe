@@ -10,9 +10,9 @@ namespace File_Sharing.Services.EmailService.Mail
 {
     public class SendConfirmationEmail : IEmailService
     {
-        public void SendEmail(EmailServiceModel EmailSM)
+        public Task SendEmailAsync(EmailServiceModel EmailSM)
         {
-            using (SmtpClient client = new SmtpClient("smtp.gmail.com", 25))
+            using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
             {
                 client.Credentials = new NetworkCredential("xgameplayer.com@gmail.com", "xgameplayer.com@gmail.com123");
 
@@ -26,6 +26,7 @@ namespace File_Sharing.Services.EmailService.Mail
                 client.UseDefaultCredentials = false;
                 client.Send(msg);
             }
+            return Task.CompletedTask;
         }
     }
 }

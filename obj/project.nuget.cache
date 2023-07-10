@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YWFvEDcVbZF2xhGPsNZ9lDo/Q4yrRidSjhCRZ1H27qwybIVXkx5DtIZc5gSunZaBQAfHPDM8YNm+vOgUPJgeww==",
+  "dgSpecHash": "0WG13Yxj1vKhBbt8SbjL7N4E7NeNKaJ9O6sItaBXaPpah2F3RhNGR7ST3NEzgg2NzFTaJ/Q0kTRBCftD+Jl5ng==",
   "success": true,
-  "projectFilePath": "c:\\Users\\muham\\source\\repos\\File Sharing\\File Sharing.csproj",
+  "projectFilePath": "C:\\Users\\muham\\source\\repos\\File Sharing\\File Sharing.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\muham\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\muham\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

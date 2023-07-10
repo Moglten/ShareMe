@@ -16268,6 +16268,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\muham\\source\\repos\\File Sharing\\Views\\Account\\ConfirmtionEmail.cshtml",
+      "TargetPath": "Views\\Account\\ConfirmtionEmail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\muham\\source\\repos\\File Sharing\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -16275,11 +16280,6 @@
     {
       "FilePath": "c:\\Users\\muham\\source\\repos\\File Sharing\\Views\\Upload\\Index.cshtml",
       "TargetPath": "Views\\Upload\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\muham\\source\\repos\\File Sharing\\Views\\Account\\ConfirmEmail.cshtml",
-      "TargetPath": "Views\\Account\\ConfirmEmail.cshtml",
       "FileKind": "mvc"
     },
     {

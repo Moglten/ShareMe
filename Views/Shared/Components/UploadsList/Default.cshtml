@@ -45,7 +45,7 @@
                                     <p class="card-text"><small class="text-muted ml-3">@item.UploadDate.ToString("dd/MM/yyyy HH:mm")</small></p>
 
                                     <div class="download-margin">
-                                        <a herf="#" asp-action="Download" asp-controller="Upload" asp-route-fileName="@item.FileName" class="btn btn-outline-primary">Download</a>
+                                        <a herf="#" asp-action="Download" asp-controller="Upload" asp-route-Id="@item.Id" class="btn btn-outline-primary">Download</a>
                                     </div>
                                 </div>
                             </div>

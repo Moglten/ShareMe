@@ -88,12 +88,9 @@ namespace File_Sharing.Controllers
                                                         , "Account"
                                                         , new { userId = user.Id, token }, Request.Scheme);
 
-                    // Get the ShortName or the Username of logged in user and add it to the ClaimsPrincipal
-                    // var targetedUser = await userManager.FindByEmailAsync(user.Email);
-                    // userManager.AddClaimAsync(targetedUser, new Claim(ClaimTypes.GivenName, user.ShortName)).Wait();
-
                     // End of the code for adding the ShortName to the ClaimsPrincipal
-                    return RedirectToAction("ConfirmEmail", "Account", ViewBag.ConfirmLink = confirmationLink);
+                    ViewBag.ConfirmLink = confirmationLink;
+                    return View("ConfirmtionEmail");
                 }
                 else
                 {
@@ -102,47 +99,57 @@ namespace File_Sharing.Controllers
                         ModelState.AddModelError("", error.Description);
                     }
                 }
+            }else
+            {
+                ModelState.AddModelError("", "Invalid Registeration");
             }
-            return RedirectToAction();
+            return View(registerVM);
         }
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult ConfirmEmail()
+        public IActionResult ConfirmtionEmail()
         {
             return View();
         }
 
-        //Undone Confirm Email method should be done next vacation.
-        [HttpPost]
-        [AllowAnonymous]
-        public async Task<IActionResult> ConfirmEmail(string userId, string token){
 
-            if(userId == null || token == null){
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> ConfirmEmail([FromQuery]string userId,[FromQuery] string token)
+        {
+            if (userId == null || token == null)
+            {
                 return RedirectToAction("Index", "Home");
             }
-            var user = await userManager.FindByIdAsync(userId);
-            if(user == null){
+            var currentUser = await userManager.FindByIdAsync(userId);
+            if (currentUser == null)
+            {
                 ViewBag.ErrorMessage = $"The User ID {userId} is invalid";
                 return View("NotFound");
             }
 
-            var result = await userManager.ConfirmEmailAsync(user, token);
+            var result = await userManager.ConfirmEmailAsync(currentUser, token);
 
+            if (result.Succeeded)
+            {
+                // Get the ShortName or the Username of logged in user and add it to the ClaimsPrincipal
+                var targetedUser = await userManager.FindByEmailAsync(currentUser.Email);
+                userManager.AddClaimAsync(targetedUser, new Claim(ClaimTypes.GivenName, currentUser.ShortName)).Wait();
 
-            if(result.Succeeded){
-                return View("Home","Index");
+                await signInManager.SignInAsync(currentUser, false);
+                return RedirectToAction("Create", "Upload");
             }
-
             return View("Error");
         }
 
+        [HttpGet]
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-
+        [HttpGet]
         public IActionResult Info()
         {
             return View();

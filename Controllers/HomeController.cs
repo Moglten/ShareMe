@@ -50,30 +50,17 @@ namespace File_Sharing.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Contact(EmailViewModel model)
         {
             if (ModelState.IsValid)
             {
                 // Database Model go to saved in database
-                _db.Contacts.Add(new Contact
-                    {
-                    Email=model.Email,
-                    Message = model.Message,
-                    Subject = model.Subject,
-                    Name = model.Name,
-                    UserId = User.FindFirstValue(ClaimTypes.NameIdentifier)
-                    });
-
+                _db.Contacts.Add( _mapper.Map<Contact>(model));
                 await _db.SaveChangesAsync();
 
                 // Send Email by using EmailService with EmailServiceModel
-                _emailService.SendEmail(new EmailServiceModel
-                {
-                    Name = model.Name,
-                    Email = model.Email,
-                    Subject = model.Subject,
-                    Message = model.Message
-                });
+                _ = _emailService.SendEmailAsync( _mapper.Map<EmailServiceModel>(model));
 
                 TempData["Message"] = "Message has been sent successfully";
 

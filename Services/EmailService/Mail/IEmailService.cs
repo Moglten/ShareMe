@@ -9,6 +9,6 @@ namespace File_Sharing.Services.EmailService.Mail
 {
     public interface IEmailService
     {
-        void SendEmail(EmailServiceModel EmailSM);
+        public Task SendEmailAsync(EmailServiceModel EmailSM);
     }
 }

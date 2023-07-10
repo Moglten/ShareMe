@@ -56,10 +56,12 @@
                                 <a asp-area="" asp-controller="Upload" asp-action="Index" style="text-decoration: none;">Uploads</a>
                             </li>
                         }
-
-                        <li class="nav-item @(Context.Request.Path.Value.ToLower() == "/home/contact"? "active" : "")">
-                            <a asp-area="" asp-controller="Home" asp-action="Contact" style="text-decoration: none;">Contact Us</a>
-                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item @(Context.Request.Path.Value.ToLower() == "/home/contact"? "active" : "")">
+                                <a asp-area="" asp-controller="Home" asp-action="Contact" style="text-decoration: none;">Contact Us</a>
+                            </li>
+                        }
 
                         <li class="nav-item @(Context.Request.Path.Value.ToLower() == "/home/about"? "active" : "")">
                             <a asp-area="" asp-controller="Home" asp-action="about" style="text-decoration: none;">About Us</a>
@@ -127,7 +129,10 @@
                             <h3>Useful link</h3>
                             <ul class="mu-useful-links">
                                 <li><a href="/Home/About">About Us</a></li>
-                                <li><a href="/Home/Contact">Contact Us</a></li>
+                                 @if (User.Identity.IsAuthenticated)
+                                     {
+                                        <li><a href="/Home/Contact">Contact Us</a></li>
+                                     }
                             </ul>
                         </div>
                     </div>

@@ -142,9 +142,9 @@ namespace File_Sharing.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Download(string Id)
+        public async Task<IActionResult> Download([FromQuery]string FileName)
         {
-            var selectedFile = await _uploadServices.FindAsync(Id);
+            var selectedFile = await _uploadServices.FindAsync(FileName);
 
             if (selectedFile == null)
             {
