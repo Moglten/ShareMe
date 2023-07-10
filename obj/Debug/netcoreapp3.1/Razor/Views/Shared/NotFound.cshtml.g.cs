@@ -20,7 +20,7 @@ using File_Sharing;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\muham\source\repos\File Sharing\Views\_ViewImports.cshtml"
-using File_Sharing.Models;
+using File_Sharing.ViewModels;
 
 #line default
 #line hidden
@@ -61,7 +61,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"14e7ac063e54f1cfc045389723a33a92ce9eb7a3", @"/Views/Shared/NotFound.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2ed04ae7bdaa036f9946f69193c6a89b258b6bf7", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a6c132535462ba65dbdea26a417f59c9ce8e2005", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared_NotFound : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Microsoft.AspNetCore.Diagnostics.StatusCodeReExecuteFeature>
     #nullable disable
@@ -104,7 +104,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<br/>\r\n<br/>\r\n<br/>\r\n<br/>\r\n<br/>\r\n<h1 class=\"text-center\">Nothing Here to see you miss leading your target,trust me you should click here \r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "14e7ac063e54f1cfc045389723a33a92ce9eb7a35678", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "14e7ac063e54f1cfc045389723a33a92ce9eb7a35682", async() => {
                 WriteLiteral("Home");
             }
             );

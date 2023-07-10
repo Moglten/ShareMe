@@ -20,7 +20,7 @@ using File_Sharing;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\muham\source\repos\File Sharing\Views\_ViewImports.cshtml"
-using File_Sharing.Models;
+using File_Sharing.ViewModels;
 
 #line default
 #line hidden
@@ -61,7 +61,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cf31bf293a31d723ad94f4556a65d4a98bfe31b1", @"/Views/Home/About.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2ed04ae7bdaa036f9946f69193c6a89b258b6bf7", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a6c132535462ba65dbdea26a417f59c9ce8e2005", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Home_About : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -146,7 +146,7 @@ using Microsoft.AspNetCore.Identity;
                             <div class=""col-md-6"">
                                 <div class=""mu-about-left"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "cf31bf293a31d723ad94f4556a65d4a98bfe31b17082", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "cf31bf293a31d723ad94f4556a65d4a98bfe31b17086", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

@@ -1,4 +1,4 @@
-﻿using File_Sharing.Models;
+﻿using File_Sharing.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

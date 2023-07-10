@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace File_Sharing.Models
+namespace File_Sharing.ViewModels
 {
     public class LoginViewModel
     {
@@ -15,13 +15,12 @@ namespace File_Sharing.Models
         [Required]
         public string Password { get; set; }
     }
-    
     public class RegisterViewModel
-    {   
+    {
         [Required]
         [MinLength(3, ErrorMessage = "Name must be at least 3 characters long")]
         [MaxLength(12, ErrorMessage = "Name must be less than 20 characters long")]
-        [Display(Name = "UserName")]
+        [Display(Name = "Username")]
         public string ShortName { get; set; }
 
         [EmailAddress]
@@ -34,6 +33,5 @@ namespace File_Sharing.Models
         [DataType(DataType.PhoneNumber)]
         [Required]
         public string PhoneNumber { get; set; }
-
     }
 }

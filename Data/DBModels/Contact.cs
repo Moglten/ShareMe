@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace File_Sharing.Data
+namespace File_Sharing.Data.DBModels
 {
     public class Contact
     {

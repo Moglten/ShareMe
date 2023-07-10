@@ -1,8 +1,10 @@
 ﻿using File_Sharing.Data;
-using File_Sharing.Models;
+using File_Sharing.Services;
+using File_Sharing.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,34 +17,20 @@ namespace File_Sharing.Controllers
     [Authorize]
     public class UploadController : Controller
     {
-        private readonly ApplicationDbContext _db;
         private readonly IWebHostEnvironment env;
-        public UploadController(ApplicationDbContext context, IWebHostEnvironment _env)
+        private readonly IUploadServices _uploadServices;
+        public UploadController(IUploadServices uploadServices, IWebHostEnvironment _env)
         {
-            _db = context;
+            _uploadServices = uploadServices;
             env = _env;
         }
-
 
         [HttpGet]
         public IActionResult Index()
         {
-
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var result = _db.Uploads.Where(u => u.UserId == userId)
-                                    .OrderByDescending(u => u.UploadDate)
-                                    .Select(u => new UploadViewModel
-                                    {
-                                        Id = u.Id,
-                                        OriginalFileName = u.OriginalFileName,
-                                        FileName = u.FileName,
-                                        FileType = u.ContentType,
-                                        Size = u.Size,
-                                        UploadDate = u.UploadDate,
-                                        DownloadCount = u.DownloadCount
-   
-                                    }); 
+            var result = _uploadServices.GetByUserId(userId );
 
             return View(result);
         }
@@ -65,107 +53,98 @@ namespace File_Sharing.Controllers
                 var filename = name + extension;
                 var root = env.WebRootPath;
                 var path = Path.Combine(root, "uploads", filename);
-                
                 using (var fileStream = System.IO.File.Create(path))
                 {
                     await UploadVm.File.CopyToAsync(fileStream);
                 }
 
 
-               await _db.Uploads.AddAsync(new Uploads
-               {
-                    OriginalFileName = UploadVm.File.FileName,
-                    FileName = filename,  
-                    ContentType = UploadVm.File.ContentType,
-                    Size = UploadVm.File.Length,
-                    UserId = User.FindFirstValue(ClaimTypes.NameIdentifier)
-               });
+               await _uploadServices.CreateAsync(new InputUpload
+                {
+                        OriginalFileName = UploadVm.File.FileName,
+                        FileName = filename,
+                        ContentType = UploadVm.File.ContentType,
+                        Size = UploadVm.File.Length,
+                        UserId = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                });
 
-                await _db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View();
+            return View(UploadVm);
         }
 
 
         [HttpGet]
-        public IActionResult Delete(string Id)
+        public async Task<IActionResult> Delete(string Id)
         {
-            var selectedUpload = _db.Uploads.Find(Id);
-            var uploadVM = new UploadViewModel
-            {
-                Id = selectedUpload.Id,
-                FileName = selectedUpload.FileName,
-                FileType = selectedUpload.ContentType,
-                OriginalFileName = selectedUpload.OriginalFileName,
-                Size = selectedUpload.Size,
-                UploadDate = selectedUpload.UploadDate
-            };
+            var currentLoggedinUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            return View(uploadVM);
+            var selectedUpload = await _uploadServices.FindAsync(Id, currentLoggedinUserId);
+
+            if (selectedUpload == null)
+                return NotFound();
+
+            return View(selectedUpload);
         }
 
         [HttpPost]
-        public IActionResult DeleteConfirm(string Id)
+        public async Task<IActionResult> DeleteConfirm(string Id)
         {
-            var upload = _db.Uploads.Find(Id);
+            var currentLoggedinUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            if (upload.UserId != User.FindFirstValue(ClaimTypes.NameIdentifier))
-            {
+           var DeleteConfirmed = await _uploadServices.DeleteAsync(Id, currentLoggedinUserId);
+
+           if(!DeleteConfirmed)
                 return NotFound();
-            }
-
-            _db.Uploads.Remove(upload);
-
-            _db.SaveChanges();
 
             return RedirectToAction("Index");
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult SearchResult(string term)
+        public async Task<IActionResult> SearchResult(string term, int RequiredPage = 1)
         {
-            var results = _db.Uploads.Where(u => u.OriginalFileName.Contains(term))
-                .OrderByDescending(u => u.UploadDate)
-                .Select(u => new UploadViewModel
-                {
-                    Id = u.Id,
-                    OriginalFileName = u.OriginalFileName,
-                    FileName = u.FileName,
-                    FileType = u.ContentType,
-                    Size = u.Size,
-                    UploadDate = u.UploadDate
-
-                });
-
-            return View(results);
+            var results = _uploadServices.Search(term);
+            return View(model:await GetPagedData(results, RequiredPage));
         }
 
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Browse()
+        public async Task<IActionResult> Browse(int RequiredPage = 1)
         {
-            var results = _db.Uploads.OrderByDescending(u => u.UploadDate)
-                                    .Select(u => new UploadViewModel
-                                    {
-                                        Id = u.Id,
-                                        OriginalFileName = u.OriginalFileName,
-                                        FileName = u.FileName,
-                                        FileType = u.ContentType,
-                                        Size = u.Size,
-                                        UploadDate = u.UploadDate
 
-                                    });
+            // extract the total required page of uploads
+            var results = _uploadServices.GetAll();
 
-            return View(results);
+            return View(model:await GetPagedData(results, RequiredPage));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Download(string fileName)
+
+        private async Task<List<UploadViewModel>> GetPagedData(IQueryable<UploadViewModel> uploadsData, int RequiredPage)
         {
-            var selectedFile = _db.Uploads.FirstOrDefault(u => u.FileName == fileName);
+            // Pagination paramater helper
+            const int pageSize = 1;
+            int totalPages = (int)Math.Ceiling((double)_uploadServices.GetTotalUploads() / pageSize);
+            //Handle the Uplimit and the downlimit of the required page
+            RequiredPage = RequiredPage < 1 ? 1 : RequiredPage;
+            if (RequiredPage > totalPages)
+            {
+                RequiredPage = 1;
+            }
+            int skipCount = pageSize * (RequiredPage - 1);
+
+            ViewBag.CurrentPage = RequiredPage;
+            ViewBag.TotalPages = totalPages;
+
+            return await uploadsData.Skip(skipCount).Take(pageSize).ToListAsync();
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Download(string Id)
+        {
+            var selectedFile = await _uploadServices.FindAsync(Id);
 
             if (selectedFile == null)
             {
@@ -174,13 +153,12 @@ namespace File_Sharing.Controllers
 
             selectedFile.DownloadCount++;
 
-            _db.Update(selectedFile);
-            await _db.SaveChangesAsync();
+            await _uploadServices.UpdateAsync(selectedFile);
 
             var path = "~/uploads/" + selectedFile.FileName;
             Response.Headers.Add("Expires", DateTime.Now.AddDays(-3).ToLongDateString());
             Response.Headers.Add("Cache-Control", "no-cache");
-            return File(path, selectedFile.ContentType, selectedFile.OriginalFileName); ;
+            return File(path, selectedFile.ContentType, selectedFile.OriginalFileName);
         }
     }
 }

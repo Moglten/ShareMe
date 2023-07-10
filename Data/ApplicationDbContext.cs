@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using File_Sharing.Data.DBModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,9 +13,7 @@ namespace File_Sharing.Data
     {
         public ApplicationDbContext(DbContextOptions Options):base(Options)
         {
-
         }
-
 
         public DbSet<Uploads> Uploads { get; set; }
         public DbSet<Contact> Contacts { get; set; }

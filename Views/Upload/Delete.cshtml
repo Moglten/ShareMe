@@ -1,4 +1,4 @@
-﻿@model File_Sharing.Models.UploadViewModel
+﻿@model File_Sharing.ViewModels.UploadViewModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -36,10 +36,10 @@
             @Html.DisplayFor(model => model.Size)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FileType)
+            @Html.DisplayNameFor(model => model.ContentType)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FileType)
+            @Html.DisplayFor(model => model.ContentType)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.UploadDate)

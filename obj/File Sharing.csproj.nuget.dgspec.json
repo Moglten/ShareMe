@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\muham\\source\\repos\\File Sharing\\File Sharing.csproj": {}
+    "c:\\Users\\muham\\source\\repos\\File Sharing\\File Sharing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\muham\\source\\repos\\File Sharing\\File Sharing.csproj": {
+    "c:\\Users\\muham\\source\\repos\\File Sharing\\File Sharing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muham\\source\\repos\\File Sharing\\File Sharing.csproj",
+        "projectUniqueName": "c:\\Users\\muham\\source\\repos\\File Sharing\\File Sharing.csproj",
         "projectName": "File Sharing",
-        "projectPath": "C:\\Users\\muham\\source\\repos\\File Sharing\\File Sharing.csproj",
+        "projectPath": "c:\\Users\\muham\\source\\repos\\File Sharing\\File Sharing.csproj",
         "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muham\\source\\repos\\File Sharing\\obj\\",
+        "outputPath": "c:\\Users\\muham\\source\\repos\\File Sharing\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -20,7 +20,6 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +38,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "BuildBundlerMinifier": {
               "target": "Package",
               "version": "[3.2.449, )"
@@ -78,6 +81,18 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "Microsoft.jQuery.Unobtrusive.Ajax": {
+              "target": "Package",
+              "version": "[3.2.6, )"
+            },
+            "jQuery": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "jQuery.Ajax.Unobtrusive": {
+              "target": "Package",
+              "version": "[2.0.20710, )"
             }
           },
           "imports": [

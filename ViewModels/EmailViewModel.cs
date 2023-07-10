@@ -1,10 +1,12 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace File_Sharing.Models
+namespace File_Sharing.ViewModels
 {
-    public class  EmailServiceModel
+    public class  EmailViewModel
     {
+        [Required]
+        public string Name { get; set; }
         [Required]
         [EmailAddress]
         public string Email { get; set; }

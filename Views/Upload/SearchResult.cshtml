@@ -5,10 +5,25 @@
     ViewData["Title"] = "SearchResult";
 }
 
-<h1>SearchResult</h1>
+<h1>Search Result</h1>
 
 
 
-<div>
-    @await Component.InvokeAsync("UploadsList", new { Uploads = Model})
+<div class="container">
+   <div class="row"></div>
+         @await Component.InvokeAsync("UploadsList", new { Uploads = Model })
+        </br>
+        </br>
+        <div class="col-12 text-center">
+            
+            @if(@ViewBag.CurrentPage > 1){
+                <a href="/Upload/Browse/?RequiredPage=@(ViewBag.CurrentPage - 1)" class="btn btn-outline-primary btn-lg algin-left">Prev</a>
+            } 
+            @if(@ViewBag.CurrentPage < @ViewBag.TotalPages){
+                <a href="/Upload/Browse/?RequiredPage=@(ViewBag.CurrentPage + 1)" class="btn btn-outline-primary btn-lg algin-right">Next</a>
+            }
+        </div>
+    </div>
 </div>
+<br />
+

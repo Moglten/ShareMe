@@ -1,4 +1,4 @@
-﻿@model IEnumerable<File_Sharing.Models.UploadViewModel>
+﻿@model IEnumerable<UploadViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -23,7 +23,7 @@
                 @Html.DisplayNameFor(model => model.Size)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FileType)
+                @Html.DisplayNameFor(model => model.ContentType)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.UploadDate)
@@ -35,7 +35,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @if (item.FileType == "image/jpeg" || item.FileType == "image/png")
+                @if (item.ContentType == "image/jpeg" || item.ContentType == "image/png")
                 {
                     <img src="~/uploads/@item.FileName" width="70" height="70" alt="" />
                 }
@@ -58,7 +58,7 @@
                 }
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FileType)
+                @Html.DisplayFor(modelItem => item.ContentType)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UploadDate)

@@ -1,6 +1,6 @@
 using System;
 
-namespace File_Sharing.Models
+namespace File_Sharing.ViewModels
 {
     public class ErrorViewModel
     {

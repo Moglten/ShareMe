@@ -1,5 +1,7 @@
 ﻿using File_Sharing.Data;
-using File_Sharing.Models;
+using File_Sharing.Data.DBModels;
+using File_Sharing.Services.EmailService.Mail;
+using File_Sharing.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -10,19 +12,19 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-
-
 namespace File_Sharing.Controllers
 {
-
-
     public class AccountController : Controller
     {
         private readonly UserManager<AppUserExtender> userManager;
         private readonly SignInManager<AppUserExtender> signInManager;
-        public AccountController(UserManager<AppUserExtender> _userManager, SignInManager<AppUserExtender> _signManager)
+        private readonly IEmailService _emailService;
+        public AccountController(UserManager<AppUserExtender> _userManager,
+                                 SignInManager<AppUserExtender> _signManager,
+                                 IEnumerable<IEmailService> emailService)
         {
             userManager = _userManager;
+            _emailService = emailService.FirstOrDefault(e => e.GetType() == typeof(SendConfirmationEmail));
             signInManager = _signManager;
         }
 
@@ -32,18 +34,14 @@ namespace File_Sharing.Controllers
             return View();
         }
 
-
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel LoginVM, string ReturnUrl)
         {
-
             if (ModelState.IsValid)
             {
                 var result = await signInManager.PasswordSignInAsync(LoginVM.Email, LoginVM.Password, true, false);
-           
                 if (result.Succeeded)
                 {
-                    
                     // Get the ShortName or the Username of logged in user and add it to the ClaimsPrincipal
                     var user = await userManager.FindByEmailAsync(LoginVM.Email);
                     userManager.AddClaimAsync(user, new Claim(ClaimTypes.GivenName, user.ShortName)).Wait();
@@ -56,9 +54,7 @@ namespace File_Sharing.Controllers
                     }
                     return RedirectToAction("Create", "Upload");
                 }
-
             }
-
             return View(LoginVM);
         }
 
@@ -90,15 +86,14 @@ namespace File_Sharing.Controllers
                     var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
                     var confirmationLink = Url.Action("ConfirmEmail"
                                                         , "Account"
-                                                        , new { userId = user.Id, token = token }, Request.Scheme);
+                                                        , new { userId = user.Id, token }, Request.Scheme);
 
                     // Get the ShortName or the Username of logged in user and add it to the ClaimsPrincipal
-                    var targetedUser = await userManager.FindByEmailAsync(user.Email);
-                    userManager.AddClaimAsync(targetedUser, new Claim(ClaimTypes.GivenName, user.ShortName)).Wait();
-                
+                    // var targetedUser = await userManager.FindByEmailAsync(user.Email);
+                    // userManager.AddClaimAsync(targetedUser, new Claim(ClaimTypes.GivenName, user.ShortName)).Wait();
 
                     // End of the code for adding the ShortName to the ClaimsPrincipal
-                    return RedirectToAction("ConfirmEmail", "Account",confirmationLink);
+                    return RedirectToAction("ConfirmEmail", "Account", ViewBag.ConfirmLink = confirmationLink);
                 }
                 else
                 {
@@ -108,22 +103,25 @@ namespace File_Sharing.Controllers
                     }
                 }
             }
-              
-            return View(registerVM);
+            return RedirectToAction();
         }
 
-
-
-        //Undone Confirm Email method should be done next vacation.
         [HttpGet]
         [AllowAnonymous]
+        public IActionResult ConfirmEmail()
+        {
+            return View();
+        }
+
+        //Undone Confirm Email method should be done next vacation.
+        [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> ConfirmEmail(string userId, string token){
+
             if(userId == null || token == null){
                 return RedirectToAction("Index", "Home");
             }
-            
             var user = await userManager.FindByIdAsync(userId);
-            
             if(user == null){
                 ViewBag.ErrorMessage = $"The User ID {userId} is invalid";
                 return View("NotFound");
@@ -131,14 +129,14 @@ namespace File_Sharing.Controllers
 
             var result = await userManager.ConfirmEmailAsync(user, token);
 
+
             if(result.Succeeded){
-               
                 return View("Home","Index");
             }
 
             return View("Error");
-            
         }
+
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();

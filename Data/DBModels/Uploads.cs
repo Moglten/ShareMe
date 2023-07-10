@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace File_Sharing.Data
+namespace File_Sharing.Data.DBModels
 {
     public class Uploads
     {
@@ -13,7 +13,6 @@ namespace File_Sharing.Data
             UploadDate = DateTime.Now;
             Id = Guid.NewGuid().ToString();
         }
-           
         public string Id { get; set; }
 
         public string OriginalFileName { get; set; }

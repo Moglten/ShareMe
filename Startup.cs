@@ -1,17 +1,13 @@
 using File_Sharing.Data;
-using File_Sharing.Helpers.Mail;
+using File_Sharing.Data.DBModels;
+using File_Sharing.Services.EmailService.Mail;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace File_Sharing
 {
@@ -27,23 +23,22 @@ namespace File_Sharing
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddLocalization();
 
-            services.AddLocalization();
-
-            services.AddTransient<IEmailService, EmailService>();
+            services.AddScoped<IEmailService, SendContactEmail>();
+            services.AddScoped<IEmailService, SendConfirmationEmail>();
+            
+            services.AddTransient<IUploadServices, UploadServices>();
 
             services.AddControllersWithViews();
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-            {
-                options.UseSqlServer(Configuration.GetConnectionString("DBConnection"));
-            });
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
 
             services.AddIdentity<AppUserExtender, IdentityRole>()
                     .AddEntityFrameworkStores<ApplicationDbContext>()
                     .AddDefaultTokenProviders();
 
-            
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +52,6 @@ namespace File_Sharing
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
 
             app.UseStatusCodePagesWithReExecute("/Error/{0}"); // 404
 

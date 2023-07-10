@@ -20,7 +20,7 @@ using File_Sharing;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\muham\source\repos\File Sharing\Views\_ViewImports.cshtml"
-using File_Sharing.Models;
+using File_Sharing.ViewModels;
 
 #line default
 #line hidden
@@ -61,7 +61,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"13ccb28310e11ccc591f2132eebb59b46a6e9517", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2ed04ae7bdaa036f9946f69193c6a89b258b6bf7", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a6c132535462ba65dbdea26a417f59c9ce8e2005", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<UploadViewModel>>
     #nullable disable
@@ -113,7 +113,7 @@ using Microsoft.AspNetCore.Identity;
             <div class=""row justify-content-md-center"">
                 <div class=""col-md-8"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13ccb28310e11ccc591f2132eebb59b46a6e95175546", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13ccb28310e11ccc591f2132eebb59b46a6e95175550", async() => {
                 WriteLiteral(@"
                         <div class=""input-group input-group-lg mb-3"">
                             <input type=""text"" class=""form-control"" name=""term"" placeholder=""File Name"" aria-label=""Recipient's username"" aria-describedby=""button-addon2"" />
