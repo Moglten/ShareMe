@@ -31,7 +31,10 @@ namespace File_Sharing
 
             services.AddControllersWithViews();
 
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
+            services.AddDbContext<ApplicationDbContext>(
+                                    options => options.UseSqlServer(
+                                        Configuration.GetConnectionString("DBConnection")
+                                        ));
 
             services.AddIdentity
                     <AppUserExtender, IdentityRole>(
@@ -39,8 +42,21 @@ namespace File_Sharing
                     .AddEntityFrameworkStores<ApplicationDbContext>()
                     .AddDefaultTokenProviders();
 
+            services.AddAuthentication()
+                    .AddFacebook(options =>
+                    {
+                        options.AppId = Configuration.GetSection("Facebook")["AppId"];
+                        options.AppSecret  = Configuration.GetSection("Facebook")["AppSecret"];
+                    })
+                    .AddGoogle(options =>
+                    {
+                        options.ClientId = Configuration.GetSection("Google")["ClientId"];
+                        options.ClientSecret = Configuration.GetSection("Google")["ClientSecret"];
+                    });
+
             services.AddAutoMapper(typeof(Startup));
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -1,4 +1,5 @@
-﻿using File_Sharing.Data;
+﻿using AutoMapper;
+using File_Sharing.Data;
 using File_Sharing.Data.DBModels;
 using File_Sharing.Services.EmailService.Mail;
 using File_Sharing.ViewModels;
@@ -19,13 +20,17 @@ namespace File_Sharing.Controllers
         private readonly UserManager<AppUserExtender> userManager;
         private readonly SignInManager<AppUserExtender> signInManager;
         private readonly IEmailService _emailService;
+        private readonly IMapper _mapper;
         public AccountController(UserManager<AppUserExtender> _userManager,
                                  SignInManager<AppUserExtender> _signManager,
-                                 IEnumerable<IEmailService> emailService)
+                                 IEnumerable<IEmailService> emailService,
+                                 IMapper mapper)
         {
             userManager = _userManager;
             _emailService = emailService.FirstOrDefault(e => e.GetType() == typeof(SendConfirmationEmail));
             signInManager = _signManager;
+            _mapper = mapper;
+
         }
 
         [HttpGet]
@@ -150,9 +155,57 @@ namespace File_Sharing.Controllers
             return RedirectToAction("Index", "Home");
         }
         [HttpGet]
-        public IActionResult Info()
+        public async Task<IActionResult> Info()
         {
-            return View();
+            var currentUser =await userManager.GetUserAsync(User);
+
+            if (currentUser == null)
+                return NotFound();
+
+            var model = _mapper.Map<UserViewModel>(currentUser);
+            return View(model);
+        }
+
+        public IActionResult ExternalLogin(string provider){
+           var properities = signInManager.ConfigureExternalAuthenticationProperties(provider, "/Account/ExternalResponse");
+            return Challenge(properities, provider);
+        }
+
+        public async Task<IActionResult> ExternalResponse(){
+            var info = await signInManager.GetExternalLoginInfoAsync();
+
+            if(info == null){
+                TempData["Message"] = "Login failed";
+                return RedirectToAction("Login");
+            }
+
+            var LoginResult = await signInManager
+                                    .ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, false);
+
+            if(!LoginResult.Succeeded){
+                var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+                var firstname = info.Principal.FindFirstValue(ClaimTypes.GivenName);
+                var lastname = info.Principal.FindFirstValue(ClaimTypes.Surname);
+
+                var userToCreate = new AppUserExtender(){
+                    Email = email,
+                    UserName = email,
+                    ShortName = firstname + " " + lastname
+                };
+            var createResult = await userManager.CreateAsync(userToCreate);
+
+                if(createResult.Succeeded ){
+                    var exLoginResult = await userManager.AddLoginAsync(userToCreate, info);
+                    if(exLoginResult.Succeeded){
+                        await signInManager.SignInAsync(userToCreate, false, info.LoginProvider);
+                        return RedirectToAction("Index", "Home");
+                    }else {
+                        await userManager.DeleteAsync(userToCreate);
+                    }
+                }
+            return RedirectToAction("Login");
+            }
+            return RedirectToAction("Index", "Home");
         }
     }
 }

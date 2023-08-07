@@ -1,7 +1,16 @@
-﻿<h2>Info</h2>
+﻿
+@model File_Sharing.ViewModels.UserViewModel
 
+<h2>Info</h2>
+<h2>Logged In User : </h2>
 <p>
-    <strong>Logged In User : </strong> : <span>@User.Identity.Name</span>
+    <strong> Email </strong> : <span>@Model.Email</span>
+</p>
+<p>
+    <strong> Name </strong> : <span>@Model.ShortName</span>
+</p>
+<p>
+    <strong> PhoneNumber </strong> : <span>@Model.PhoneNumber</span>
 </p>
 <br />
 <h2>Manage </h2>
