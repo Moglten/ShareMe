@@ -38,21 +38,13 @@ namespace File_Sharing
 
             services.AddIdentity
                     <AppUserExtender, IdentityRole>(
-                        opt => opt.SignIn.RequireConfirmedEmail = true)
+                        options => options.SignIn.RequireConfirmedEmail = true
+                    )
                     .AddEntityFrameworkStores<ApplicationDbContext>()
                     .AddDefaultTokenProviders();
 
-            services.AddAuthentication()
-                    .AddFacebook(options =>
-                    {
-                        options.AppId = Configuration.GetSection("Facebook")["AppId"];
-                        options.AppSecret  = Configuration.GetSection("Facebook")["AppSecret"];
-                    })
-                    .AddGoogle(options =>
-                    {
-                        options.ClientId = Configuration.GetSection("Google")["ClientId"];
-                        options.ClientSecret = Configuration.GetSection("Google")["ClientSecret"];
-                    });
+            services.AddAuthentication();
+                   
 
             services.AddAutoMapper(typeof(Startup));
         }
@@ -81,6 +73,11 @@ namespace File_Sharing
 
             app.UseEndpoints(endpoints =>
             {
+                 endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                 
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

@@ -58,7 +58,7 @@ namespace File_Sharing.Controllers
                     }
                     return RedirectToAction("Create", "Upload");
                 }else{
-                    ModelState.AddModelError("", "Maybe the Email or the Password is incorrect");
+                    ModelState.AddModelError("","Maybe the Email or the Password is incorrect");
                 }
             }
             return View(LoginVM);
@@ -207,5 +207,94 @@ namespace File_Sharing.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Update(){
+            return View(await userManager.GetUserAsync(User));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ConfirmUpdate(){
+            var currentUser = await userManager.GetUserAsync(User);
+            currentUser.ShortName = User.FindFirstValue(ClaimTypes.GivenName) + " " + User.FindFirstValue(ClaimTypes.Surname);
+            await userManager.UpdateAsync(currentUser);
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult ChangePassword(){
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model){
+            if(ModelState.IsValid){
+                var currentUser = await userManager.GetUserAsync(User);
+                var result = await userManager.ChangePasswordAsync(currentUser, model.CurrentPassword, model.NewPassword);
+                if(result.Succeeded){
+                    return RedirectToAction("Index", "Home");
+                }else{
+                    foreach(var error in result.Errors){
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
+            }
+            return View(model);
+        }
+        
+        [HttpGet]
+        public IActionResult ForgetPassword(){
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ForgetPassword(ForgetPasswordViewModel model){
+            if(ModelState.IsValid){
+                var user = await userManager.FindByEmailAsync(model.Email);
+                if(user != null){
+                    var Token = await userManager.GeneratePasswordResetTokenAsync(user);
+                    var resetLink = Url.Action("ResetPassword", "Account", new {token = Token, email = user.Email});
+                    return RedirectToAction("ResetPasswordComfirmation", "Account", new {confirmationResetLink = resetLink});
+                }else{
+                    return View("NotFound");
+                }
+            }
+            return View(model);
+        }
+        
+
+        [HttpGet]
+        public IActionResult ResetPasswordComfirmation(string confirmationResetLink){
+            ViewBag.confirmationResetLink = confirmationResetLink;
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult ResetPassword(string token, string email){
+            ViewBag.Token = token;
+            ViewBag.Email = email;
+            return View();
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model){
+            if(ModelState.IsValid){
+                var user = await userManager.FindByEmailAsync(model.Email);
+                if(user != null){
+                    var result = await userManager.ResetPasswordAsync(user, model.Token, model.NewPassword);
+                    if(result.Succeeded){
+                        return RedirectToAction("Index", "Home");
+                    }else{
+                        foreach(var error in result.Errors){
+                            ModelState.AddModelError("", error.Description);
+                        }
+                    }
+                }
+            }
+            return View("NotFound");
+        }
+
+
     }
 }

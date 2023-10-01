@@ -34,4 +34,39 @@ namespace File_Sharing.ViewModels
         [Required]
         public string PhoneNumber { get; set; }
     }
+
+    public class ChangePasswordViewModel{
+        [Required]
+        public string CurrentPassword{get; set;}
+
+        [Required]
+        public string NewPassword{get; set;}
+
+        [Compare("NewPassword")]
+        public string ConfirmPassword{get; set;}
+    }
+
+    public class ForgetPasswordViewModel{
+        [Required]
+        [EmailAddress]
+        public string Email{get; set;}
+    }
+
+    public class ResetPasswordViewModel{
+        [Required]
+        public string Token{get; set;}
+
+        [Required]
+        [EmailAddress]
+        public string Email{get; set;}
+
+        [Required]
+        [DataType(DataType.Password)]
+        public string NewPassword{get; set;}
+
+        [Required]
+        [DataType(DataType.Password)]
+        [Compare("NewPassword")]
+        public string NewPasswordConfirmation{get; set;}   
+    }
 }

@@ -360,3 +360,8 @@ C:\Users\muham\source\repos\File Sharing\bin\Debug\netcoreapp3.1\System.Runtime.
 C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\Razor\Views\Account\ConfirmtionEmail.cshtml.g.cs
 C:\Users\muham\source\repos\File Sharing\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Facebook.dll
 C:\Users\muham\source\repos\File Sharing\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\Razor\Views\Account\ChangePassword.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\Razor\Views\Account\Update.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgetPassword.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPasswordComfirmation.cshtml.g.cs

@@ -124,7 +124,7 @@ namespace File_Sharing.Controllers
         private async Task<List<UploadViewModel>> GetPagedData(IQueryable<UploadViewModel> uploadsData, int RequiredPage)
         {
             // Pagination paramater helper
-            const int pageSize = 1;
+            const int pageSize = 5;
             int totalPages = (int)Math.Ceiling((double)_uploadServices.GetTotalUploads() / pageSize);
             //Handle the Uplimit and the downlimit of the required page
             RequiredPage = RequiredPage < 1 ? 1 : RequiredPage;
