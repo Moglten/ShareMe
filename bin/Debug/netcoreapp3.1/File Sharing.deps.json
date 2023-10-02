@@ -307,6 +307,14 @@
         "runtime": {
           "File Sharing.dll": {}
         },
+        "resources": {
+          "ar/File Sharing.resources.dll": {
+            "locale": "ar"
+          },
+          "en/File Sharing.resources.dll": {
+            "locale": "en"
+          }
+        },
         "compile": {
           "File Sharing.dll": {}
         }

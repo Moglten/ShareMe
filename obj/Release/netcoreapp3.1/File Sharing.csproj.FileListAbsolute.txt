@@ -1,0 +1,185 @@
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\appsettings.Development.json
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\appsettings.json
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\bundleconfig.json
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\libman.json
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\File Sharing.exe
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\File Sharing.deps.json
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\File Sharing.runtimeconfig.json
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\File Sharing.runtimeconfig.dev.json
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\File Sharing.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\File Sharing.pdb
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\File Sharing.Views.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\File Sharing.Views.pdb
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\AutoMapper.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Facebook.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.CommandLine.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Hosting.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.Configuration.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.Console.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.Debug.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.EventLog.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.EventSource.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\muham\source\repos\File Sharing\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.csproj.AssemblyReference.cache
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.AssemblyInfoInputs.cache
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.AssemblyInfo.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.csproj.CoreCompileInputs.cache
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.RazorAssemblyInfo.cache
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.RazorAssemblyInfo.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\staticwebassets\File Sharing.StaticWebAssets.Manifest.cache
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\staticwebassets\File Sharing.StaticWebAssets.Pack.cache
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\staticwebassets\msbuild.File Sharing.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\staticwebassets\msbuild.build.File Sharing.props
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.File Sharing.props
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.File Sharing.props
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.TagHelpers.input.cache
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.TagHelpers.output.cache
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.RazorCoreGenerate.cache
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Account\ChangePassword.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Account\ConfirmtionEmail.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Account\ForgetPassword.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Account\Info.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Account\ResetPasswordComfirmation.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Account\Update.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Shared\Components\UploadsList\Default.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Upload\Browse.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Upload\Create.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Upload\Delete.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Upload\Index.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\Upload\SearchResult.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.RazorTargetAssemblyInfo.cache
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.RazorTargetAssemblyInfo.cs
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.Views.pdb
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.csproj.CopyComplete
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.dll
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.pdb
+C:\Users\muham\source\repos\File Sharing\obj\Release\netcoreapp3.1\File Sharing.genruntimeconfig.cache

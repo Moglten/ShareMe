@@ -4,10 +4,13 @@ using File_Sharing.Services.EmailService.Mail;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 
 namespace File_Sharing
 {
@@ -29,6 +32,8 @@ namespace File_Sharing
             services.AddScoped<IEmailService, SendConfirmationEmail>();
             services.AddTransient<IUploadServices, UploadServices>();
 
+            services.AddLocalization();
+
             services.AddControllersWithViews();
 
             services.AddDbContext<ApplicationDbContext>(
@@ -43,9 +48,9 @@ namespace File_Sharing
                     .AddEntityFrameworkStores<ApplicationDbContext>()
                     .AddDefaultTokenProviders();
 
+
             services.AddAuthentication();
                    
-
             services.AddAutoMapper(typeof(Startup));
         }
 
@@ -66,6 +71,14 @@ namespace File_Sharing
 
             app.UseStaticFiles();
 
+            // var supportedCulture = new[] {"ar-SA","en-US"};
+            // app.UseRequestLocalization(
+            //     options => {options.AddSupportedUICultures(supportedCulture);
+            //                 options.AddSupportedCultures(supportedCulture);
+            //                 options.DefaultRequestCulture = new RequestCulture("ar-SA");
+            //                 }
+            // );
+
             app.UseRouting();
 
             app.UseAuthentication();
@@ -73,11 +86,6 @@ namespace File_Sharing
 
             app.UseEndpoints(endpoints =>
             {
-                 endpoints.MapControllerRoute(
-                    name: "areas",
-                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-                 
-
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

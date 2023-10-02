@@ -78,14 +78,13 @@ namespace File_Sharing.Controllers
         }
 
         [HttpGet]
-        public IActionResult SetLang(string lang)
+        public IActionResult SetCulture(string Lang)
         {
-
-            if (!string.IsNullOrEmpty(lang))
+            if (!string.IsNullOrEmpty(Lang))
             {
                 Response.Cookies.Append(
                     CookieRequestCultureProvider.DefaultCookieName,
-                    CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(lang)),
+                    CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(Lang)),
                     new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1)}
                     );
             }

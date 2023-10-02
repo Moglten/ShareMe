@@ -365,3 +365,12 @@ C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\Razor\Views\Acc
 C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgetPassword.cshtml.g.cs
 C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
 C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPasswordComfirmation.cshtml.g.cs
+C:\Users\muham\source\repos\File Sharing\bin\Debug\netcoreapp3.1\ar\File Sharing.resources.dll
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\File Sharing.csproj.GenerateResource.cache
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\ar\File Sharing.resources.cs
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\ar\File Sharing.resources.dll
+C:\Users\muham\source\repos\File Sharing\bin\Debug\netcoreapp3.1\en\File Sharing.resources.dll
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\File_Sharing.Resources.Views.Shared._Layout.ar.resources
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\File_Sharing.Resources.Views.Shared._Layout.en.resources
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\en\File Sharing.resources.cs
+C:\Users\muham\source\repos\File Sharing\obj\Debug\netcoreapp3.1\en\File Sharing.resources.dll
